@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Звіт з курсу</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      margin: 0;
+      height: 100vh;
+    }
+
+    aside {
+      background-color: #f2f2f2;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+      gap: 15px;
+      border-right: 2px solid #ccc;
+    }
+
+    aside button {
+      width: 200px;
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 30px;
+      background-color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      position: relative;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .student-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+      margin-bottom: 20px;
+    }
+
+    .photo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    #content {
+      border: 2px solid black;
+      min-height: 300px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<aside>
+  <button onclick="showContent('course')">НАЗВА КУРСУ<br>Посилання на курс</button>
+  <button onclick="showContent('repos')">Посилання на репозиторій</button>
+  <button onclick="showContent('certificate')">СЕРТИФІКАТ з БАЛАМИ</button>
+  <button onclick="showContent('tasks')">Посилання на завдання</button>
+  <button onclick="showContent('conclusion')">ВИСНОВКИ</button>
+</aside>
+
+<main>
+  <div class="header">
+    <h2>ЗВІТ</h2>
+    <p>з дисципліни «WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБОК»</p>
+  </div>
+
+  <div class="student-info">
+    <div>Студентка гр. ІК-22</div>
+    <div>Шахова Інна Євгенівна</div>
+  </div>
+
+  <div class="photo">
+    ФОТО<br>студента
+  </div>
+
+  <div id="content">Місце виведення інформації</div>
+</main>
+
+<script>
+  function showContent(section) {
+    const content = document.getElementById("content");
+    switch (section) {
+      case 'course':
+        content.innerHTML = `<h3>Назва курсу:</h3><p>The Complete Full-Stack Web Development Bootcamp</p><p><a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?srsltid=AfmBOorTuVRrnQLQSCbT-kZ2khJeWXgTDmqM0X1fm6xUvjwvylH-BslP&couponCode=ST21MT30625G2">Перейти до курсу</a></p>`;
+        break;
+      case 'repos':
+        content.innerHTML = `<h3>Посилання на репозиторій:</h3><ul>
+          <li><a href="#">GitHub: Завдання 1</a></li>
+          <li><a href="#">GitHub: Завдання 2</a></li>
+        </ul>`;
+        break;
+        case 'certificate':
+  content.innerHTML = `
+    <h3>Сертифікат</h3>
+    <img src="ser.jpg" alt="Сертифікат" style="max-width: 100%; height: auto; border: 2px solid black;" />
+  `;
+  break;
+
+      case 'tasks':
+        content.innerHTML = `<h3>Посилання на завдання:</h3><ul>
+          <li><a href="#" target="_blank">Завдання 1 (жива сторінка)</a></li>
+          <li><a href="#" target="_blank">Завдання 2 (жива сторінка)</a></li>
+        </ul>`;
+        break;
+      case 'conclusion':
+        content.innerHTML = `<h3>Висновки:</h3><p>Отримані знання дозволили створювати інтерактивні веб-додатки з базовим backend.</p>`;
+        break;
+      default:
+        content.innerHTML = "Місце виведення інформації";
+    }
+  }
+</script>
+
+</body>
+</html>
