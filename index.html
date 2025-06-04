@@ -90,10 +90,6 @@
     <div>Шахова Інна Євгенівна</div>
   </div>
 
-  <div class="photo">
-    ФОТО<br>студента
-  </div>
-
   <div id="content">Місце виведення інформації</div>
 </main>
 
@@ -117,16 +113,22 @@
   break;
 
       case 'tasks':
-        content.innerHTML = `<h3>Посилання на завдання:</h3><ul>
-          <li><a href="1/" target="_blank">Завдання 1. Створення власного резюме</a></li>
-          <li><a href="2/" target="_blank">Завдання 2. Створення сторінки опису та досягнень Тейлор Свіфт з використанням Css</a></li>
-          <li><a href="3 dicee/Dicee Challenge/" target="_blank">Завдання 3. Створення гри Дайс(у кого більше очок, той і виграв)</a></li>
-          <li><a href="4 Drum Kit/Drum Kit/" target="_blank">Завдання 4. Барабани, гра на барабані онлайн</a></li>
-          <li><a href="5 Simon/Simon/" target="_blank">Завдання 5. Гра Сімон онлайн(потрібно повторювати послідовність)</a></li>
-          <li><a href="6 Blog/blog-app/" target="_blank">Завдання 6. Сторінка блогу з есе з використанням Node.js</a></li>
-          <li><a href="7API/my-book-notes/" target="_blank">Завдання 7. Api з книгами, CRUD-операції з React</a></li>
-        </ul>`;
-        break;
+  content.innerHTML = `<h3>Посилання на завдання:</h3><ul>
+    <li><a href="1/" target="_blank">Завдання 1. Створення власного резюме</a></li>
+    <li><a href="2/" target="_blank">Завдання 2. Створення сторінки опису та досягнень Тейлор Свіфт з використанням Css</a></li>
+    <li><a href="3 dicee/Dicee Challenge/" target="_blank">Завдання 3. Створення гри Дайс(у кого більше очок, той і виграв)</a></li>
+    <li><a href="4 Drum Kit/Drum Kit/" target="_blank">Завдання 4. Барабани, гра на барабані онлайн</a></li>
+    <li><a href="5 Simon/Simon/" target="_blank">Завдання 5. Гра Сімон онлайн(потрібно повторювати послідовність)</a></li>
+    <li>
+      <h4>Завдання 6. Сторінка блогу з есе з використанням Node.js</h4>
+      <img src="6.jpg" alt="Завдання 6" style="max-width: 100%; height: auto; border: 1px solid #000;" />
+    </li>
+    <li>
+      <h4>Завдання 7. Api з книгами, CRUD-операції з React</h4>
+      <img src="7.jpg" alt="Завдання 7" style="max-width: 100%; height: auto; border: 1px solid #000;" />
+    </li>
+  </ul>`;
+  break;
       case 'conclusion':
         content.innerHTML = `<h3>Висновки:</h3><p>Отримані знання дозволили створювати інтерактивні веб-додатки з базовим backend.</p>`;
         break;
