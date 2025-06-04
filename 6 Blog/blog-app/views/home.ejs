@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <%- include("partials/header") %>
+  <main>
+    <h1>Blog Posts</h1>
+    <% if (posts.length === 0) { %>
+      <p>No posts yet. <a href="/compose">Write one!</a></p>
+    <% } else { %>
+      <% posts.forEach(post => { %>
+        <div class="post">
+          <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+          <p><%= post.content.length > 100 ? post.content.slice(0, 100) + "..." : post.content %></p>
+          <div class="actions">
+            <a href="/edit/<%= post.id %>" class="btn">Edit</a>
+            <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+              <button type="submit" class="btn danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    <% } %>
+  </main>
+</body>
+</html>
